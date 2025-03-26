@@ -1,0 +1,303 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Earth Initiative - Convert Barren Lands</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background: #45a049;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        
+        .inspiration {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card-content {
+            padding: 20px;
+        }
+        
+        .card h3 {
+            margin-bottom: 15px;
+            color: #2E8B57;
+        }
+        
+        .form-container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 50px auto;
+        }
+        
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2E8B57;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        footer {
+            background: #2E8B57;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        #map-container {
+            height: 500px;
+            margin-top: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Reviving Our Planet</h1>
+        <p>Join our mission to transform barren lands into thriving green zones. Together, we can combat desertification, restore ecosystems, and create a sustainable future for generations to come.</p>
+        <button class="btn" id="joinBtn">Join the Movement</button>
+    </section>
+
+    <!-- Inspiration Section -->
+    <section class="container" id="inspiration">
+        <h2 style="text-align: center; margin-bottom: 20px; color: #2E8B57;">Success Stories</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">These inspiring transformations show what's possible when we work together to heal the land.</p>
+        
+        <div class="inspiration">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Before and after reforestation">
+                <div class="card-content">
+                    <h3>Loess Plateau, China</h3>
+                    <p>One of the most spectacular ecological transformations in history, where barren land was restored through terracing and tree planting, improving livelihoods for millions.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Green landscape">
+                <div class="card-content">
+                    <h3>Great Green Wall, Africa</h3>
+                    <p>An ambitious initiative to grow an 8,000km natural wonder across the width of Africa to combat desertification and provide food and jobs.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Restored farmland">
+                <div class="card-content">
+                    <h3>Rajasthan, India</h3>
+                    <p>Through rainwater harvesting and community effort, drought-prone regions have been transformed into productive agricultural land.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form (initially hidden) -->
+    <section class="form-container hidden" id="registrationForm">
+        <h2>Join Our Green Initiative</h2>
+        <form id="greenForm">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="mobile">Mobile Number</label>
+                <input type="tel" id="mobile" name="mobile" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="username">Create Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Create Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <button type="submit" class="btn" style="width: 100%;">Register & Continue</button>
+        </form>
+    </section>
+
+    <!-- Map Page (initially hidden) -->
+    <section class="container hidden" id="mapPage">
+        <h2 style="text-align: center; margin-bottom: 20px; color: #2E8B57;">Identify Barren Lands in Your Area</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">Help us locate barren lands that can be transformed into green zones. Zoom in to your area and click on the map to mark potential sites.</p>
+        
+        <div id="map-container">
+            <div id="map"></div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <button class="btn" id="submitSites">Submit Potential Sites</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Green Earth Initiative. All rights reserved.</p>
+        <p>Contact us: info@greenearthinitiative.org | +1 (555) 123-4567</p>
+    </footer>
+
+    <script>
+        // Show registration form when join button is clicked
+        document.getElementById('joinBtn').addEventListener('click', function() {
+            document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('registrationForm').classList.remove('hidden');
+        });
+        
+        // Handle form submission
+        document.getElementById('greenForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In a real application, you would send this data to a server
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                address: document.getElementById('address').value,
+                mobile: document.getElementById('mobile').value,
+                username: document.getElementById('username').value
+            };
+            
+            console.log('Form submitted:', formData);
+            
+            // Hide form and show map page
+            document.getElementById('registrationForm').classList.add('hidden');
+            document.getElementById('mapPage').classList.remove('hidden');
+            
+            // Initialize map (in a real app, you would use a proper map API)
+            initializeMap();
+            
+            // Scroll to map
+            document.getElementById('mapPage').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        function initializeMap() {
+            // This is a placeholder for actual map initialization
+            // In a real application, you would use Google Maps API, Leaflet, etc.
+            document.getElementById('map').innerHTML = `
+                <div style="width: 100%; height: 100%; background: #e8f4f8; display: flex; justify-content: center; align-items: center;">
+                    <div style="text-align: center; padding: 20px;">
+                        <h3 style="color: #2E8B57; margin-bottom:
